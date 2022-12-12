@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="username" required placeholder="Your Name">
+        <input type="text"  id="phone" required placeholder="Mobile Number">
+        <input type="number" id="roll" required placeholder="Roll Number"><br><br>
+        <label for="DSC">Your Fav. Subject* : </label>
+        <select required id="DSC">
+            <option selected disabled value="">Select DSC</option>
+            <option value="python">Python Programming</option>
+            <option value="csa">Computer System Arch.</option>
+            <option value="maths">Mathematics For Computing</option>
+        </select><br><br>
+        <button onclick="nameCheck()">Name</button>
+        <button onclick="mobileCheck()">Mobile</button>
+        <button onclick="rollCheck()">Roll Number</button><br><br>
+        <button onclick="allCheck()">ALL CHECK</button><br><br>
+
+        <button type="submit">LOGIN</button>
+
+    </form>
+
+
+    <!-- How To Make A DropDown Box -->
+
+    
+    
+
+
+
+    <script>
+
+
+
+        function nameCheck(){
+            var username = document.getElementById('username').value;
+            if ( /^[a-zA-Z]*$/.test(username)){
+                alert('Your Name is Correct')
+
+            }else{
+                alert('Your Name is Inncorrect Please Check Again!!!')
+                document.getElementById('username').value = '';
+            }
+        }
+
+
+
+
+
+
+        function mobileCheck(){
+
+            var phone = document.getElementById('phone').value;
+            if (phone.length == 10){
+                if ( /^[0-9]*$/.test(phone)){
+                    alert('You number is Valid')
+                }else{
+                    alert('You have used wrong characters!!!')
+                    document.getElementById('phone').value = '';
+                }
+
+            }else{
+                alert('Check the length of your number')
+                document.getElementById('phone').value = '';
+            }
+        }
+
+
+
+
+
+
+        function rollCheck(){
+
+            var rollno = document.getElementById('roll').value;
+            if (rollno.length != 5){
+                alert('Your Roll Has Invalid Length')
+                document.getElementById('roll').value = '';
+            }else{
+                if(rollno >= 22501 && rollno <= 22570){
+                    alert('Your Roll Number is Correct!!!')
+                }else{
+                    alert('You are not from BSC')
+                    document.getElementById('roll').value = '';
+
+                }
+            }
+
+        }
+
+
+
+        function allCheck(){
+            nameCheck()
+            mobileCheck()
+            rollCheck()
+        }
+    </script>
+</body>
+</html>
